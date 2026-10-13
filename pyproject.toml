@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sapera-viper"
+version = "1.0.0"
+description = "Checksum-neutral executable recovery tools for Konami Viper arcade boards"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name = "Sapera contributors"}]
+keywords = ["arcade", "preservation", "konami-viper", "timekeeper", "repair"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: System :: Hardware",
+  "Topic :: Utilities",
+]
+
+[project.scripts]
+sapera = "sapera.user_cli:main"
+
+
+[tool.setuptools.package-data]
+sapera = ["builds.json", "manifests/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+include = ["sapera*"]

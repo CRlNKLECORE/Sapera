@@ -1,0 +1,2404 @@
+{
+  "schema_version": 1,
+  "project": "Sapera",
+  "release": "1.0.0",
+  "policy": {
+    "exact_match": "Writes are authorized only by an exact SHA-256 match of the decompressed program.",
+    "unknown_hash": "Unknown program hashes are identified but never modified automatically.",
+    "word_check": "Every recovery site must match its expected original 32-bit PowerPC word before modification.",
+    "confidence": "Runtime-verified profiles apply normally. Other profiles require an explicit opt-in flag, and known-incomplete profiles require a second explicit opt-in."
+  },
+  "builds": {
+    "5ba4b5326c72e0e578954d41de81a2bf44ebf16759f241f4b3f68cca87ad00cd": {
+      "program_sha256": "5ba4b5326c72e0e578954d41de81a2bf44ebf16759f241f4b3f68cca87ad00cd",
+      "games": [
+        "Code One Dispatch Ver 1.16"
+      ],
+      "chds": [
+        "922b02"
+      ],
+      "load_address": "0x00040000",
+      "program_size": 1050044,
+      "classification": "static_candidate",
+      "default_profile": "legacy_full",
+      "profiles": {
+        "legacy_full": {
+          "description": "Full exact-site recipe derived from the earlier signature/semantic analysis.",
+          "status": "static_candidate",
+          "patches": [
+            {
+              "role": "code1_rtc_selfcheck",
+              "address": "0x000A4B14",
+              "original": "41820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "code1_conversion_error",
+              "address": "0x000A4B84",
+              "original": "4182FFB4",
+              "replacement": "4BFFFFB4"
+            },
+            {
+              "role": "code1_rtc_clock",
+              "address": "0x000A4BE4",
+              "original": "4182FF54",
+              "replacement": "4BFFFF54"
+            },
+            {
+              "role": "code1_backup_data",
+              "address": "0x000A4CF8",
+              "original": "41820080",
+              "replacement": "48000080"
+            }
+          ]
+        }
+      }
+    },
+    "eb02f2fef6e18052c81d9506b3ebd556eea6f346239f2ed219d9fc6d7af7361c": {
+      "program_sha256": "eb02f2fef6e18052c81d9506b3ebd556eea6f346239f2ed219d9fc6d7af7361c",
+      "games": [
+        "Code One Dispatch Ver 1.21"
+      ],
+      "chds": [
+        "922d02"
+      ],
+      "load_address": "0x00040000",
+      "program_size": 1051392,
+      "classification": "static_candidate",
+      "default_profile": "legacy_full",
+      "profiles": {
+        "legacy_full": {
+          "description": "Full exact-site recipe derived from the earlier signature/semantic analysis.",
+          "status": "static_candidate",
+          "patches": [
+            {
+              "role": "code1_rtc_selfcheck",
+              "address": "0x000A4EC0",
+              "original": "41820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "code1_conversion_error",
+              "address": "0x000A4F30",
+              "original": "4182FFB4",
+              "replacement": "4BFFFFB4"
+            },
+            {
+              "role": "code1_rtc_clock",
+              "address": "0x000A4F90",
+              "original": "4182FF54",
+              "replacement": "4BFFFF54"
+            },
+            {
+              "role": "code1_backup_data",
+              "address": "0x000A50A4",
+              "original": "41820080",
+              "replacement": "48000080"
+            }
+          ]
+        }
+      }
+    },
+    "237a86d834c3f1e96b9545edfd1fe15d6e2b8fa286ec698a258c37c41fd5716d": {
+      "program_sha256": "237a86d834c3f1e96b9545edfd1fe15d6e2b8fa286ec698a258c37c41fd5716d",
+      "games": [
+        "Driving Party: Racing in Italy"
+      ],
+      "chds": [
+        "941a02"
+      ],
+      "load_address": "0x00038040",
+      "program_size": 1168992,
+      "classification": "static_candidate",
+      "default_profile": "erased_u39_preflight",
+      "profiles": {
+        "legacy_full": {
+          "description": "Full exact-site recipe derived from the earlier signature/semantic analysis.",
+          "status": "static_candidate",
+          "patches": [
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x000464F4",
+              "original": "41820014",
+              "replacement": "48000014"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x000466DC",
+              "original": "41820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x000530D4",
+              "original": "41820114",
+              "replacement": "48000114"
+            }
+          ]
+        },
+        "erased_u39_preflight": {
+          "description": "Four-site checksum-neutral diagnostic recovery; MAME 0.289 with all-FF U39 reaches I/O Devices Configuration. Not a proven gameplay or hardware bypass.",
+          "status": "runtime_advanced",
+          "patches": [
+            {
+              "role": "early_rtc_preflight",
+              "address": "0x00046474",
+              "original": "40820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x000464F4",
+              "original": "41820014",
+              "replacement": "48000014"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x000466DC",
+              "original": "41820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x000530D4",
+              "original": "41820114",
+              "replacement": "48000114"
+            }
+          ]
+        }
+      }
+    },
+    "4eace3276adecf0c91e639d3efd2c3b92aa103fd39da40928aee92812027cd4d": {
+      "program_sha256": "4eace3276adecf0c91e639d3efd2c3b92aa103fd39da40928aee92812027cd4d",
+      "games": [
+        "GTI Club: Corso Italiano"
+      ],
+      "chds": [
+        "941b02"
+      ],
+      "load_address": "0x00038040",
+      "program_size": 1168960,
+      "classification": "static_candidate",
+      "default_profile": "erased_u39_preflight",
+      "profiles": {
+        "legacy_full": {
+          "description": "Full exact-site recipe derived from the earlier signature/semantic analysis.",
+          "status": "static_candidate",
+          "patches": [
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x000464D0",
+              "original": "41820014",
+              "replacement": "48000014"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x000466B8",
+              "original": "41820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x000530B0",
+              "original": "41820114",
+              "replacement": "48000114"
+            }
+          ]
+        },
+        "erased_u39_preflight": {
+          "description": "Four-site checksum-neutral diagnostic recovery; MAME 0.289 with all-FF U39 reaches I/O Devices Configuration. Not a proven gameplay or hardware bypass.",
+          "status": "runtime_advanced",
+          "patches": [
+            {
+              "role": "early_rtc_preflight",
+              "address": "0x00046450",
+              "original": "40820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x000464D0",
+              "original": "41820014",
+              "replacement": "48000014"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x000466B8",
+              "original": "41820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x000530B0",
+              "original": "41820114",
+              "replacement": "48000114"
+            }
+          ]
+        }
+      }
+    },
+    "a0d14258f3c613ea34e335efbd34e117bb8cda36fe52a5038dfd8b9e26de36bd": {
+      "program_sha256": "a0d14258f3c613ea34e335efbd34e117bb8cda36fe52a5038dfd8b9e26de36bd",
+      "games": [
+        "Police 24/7 / Police 911 revision"
+      ],
+      "chds": [
+        "a00eaa02"
+      ],
+      "load_address": "0x00020000",
+      "program_size": 775972,
+      "classification": "static_candidate",
+      "default_profile": "erased_u39_preflight",
+      "profiles": {
+        "legacy_full": {
+          "description": "Full exact-site recipe derived from the earlier signature/semantic analysis.",
+          "status": "static_candidate",
+          "patches": [
+            {
+              "role": "rtc_initial_checksum",
+              "address": "0x0007D854",
+              "original": "4182021C",
+              "replacement": "4800021C"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x0009AF50",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x0009B194",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x0009C724",
+              "original": "41820114",
+              "replacement": "48000114"
+            }
+          ]
+        },
+        "erased_u39_preflight": {
+          "description": "Erased-U39 diagnostic advances beyond initial RTC gate; no verified gameplay.",
+          "status": "runtime_advanced",
+          "patches": [
+            {
+              "role": "early_rtc_state_preflight",
+              "address": "0x0009AED0",
+              "original": "4082002c",
+              "replacement": "4800002c"
+            },
+            {
+              "role": "rtc_initial_checksum",
+              "address": "0x0007D854",
+              "original": "4182021C",
+              "replacement": "4800021C"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x0009AF50",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x0009B194",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x0009C724",
+              "original": "41820114",
+              "replacement": "48000114"
+            }
+          ]
+        }
+      }
+    },
+    "09c9397433066b6464acc61b7bbea0f30e18715113f48d74ae3b5280ff1da3b9": {
+      "program_sha256": "09c9397433066b6464acc61b7bbea0f30e18715113f48d74ae3b5280ff1da3b9",
+      "games": [
+        "The Keisatsukan: Shinjuku 24-ji",
+        "Police 911 / Keisatsukan revision"
+      ],
+      "chds": [
+        "a00jac02",
+        "a00uad02"
+      ],
+      "load_address": "0x00020000",
+      "program_size": 743572,
+      "classification": "static_candidate",
+      "default_profile": "erased_u39_distribution_recovery",
+      "profiles": {
+        "legacy_full": {
+          "description": "Full exact-site recipe derived from the earlier signature/semantic analysis.",
+          "status": "static_candidate",
+          "patches": [
+            {
+              "role": "rtc_initial_checksum",
+              "address": "0x00079638",
+              "original": "41820204",
+              "replacement": "48000204"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x000945D4",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x00094818",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x00095DA8",
+              "original": "41820114",
+              "replacement": "48000114"
+            }
+          ]
+        },
+        "erased_u39_preflight": {
+          "description": "Original erased-U39 RTC error bypassed; independent DISTRIBUTION ERROR remains. NOT a complete security bypass.",
+          "status": "runtime_advanced",
+          "patches": [
+            {
+              "role": "early_rtc_state_preflight",
+              "address": "0x00094554",
+              "original": "4082002c",
+              "replacement": "4800002c"
+            },
+            {
+              "role": "rtc_initial_checksum",
+              "address": "0x00079638",
+              "original": "41820204",
+              "replacement": "48000204"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x000945D4",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x00094818",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x00095DA8",
+              "original": "41820114",
+              "replacement": "48000114"
+            }
+          ]
+        },
+        "erased_u39_distribution_recovery": {
+          "status": "runtime_advanced",
+          "description": "Erased-U39 native RTC and distribution-check recovery; MAME reaches cabinet sensor diagnostic, not gameplay",
+          "patches": [
+            {
+              "role": "early_rtc_state_preflight",
+              "address": "0x00094554",
+              "original": "4082002c",
+              "replacement": "4800002c"
+            },
+            {
+              "role": "rtc_initial_checksum",
+              "address": "0x00079638",
+              "original": "41820204",
+              "replacement": "48000204"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x000945D4",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x00094818",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x00095DA8",
+              "original": "41820114",
+              "replacement": "48000114"
+            },
+            {
+              "role": "distribution_validation_success_edge",
+              "address": "0x000949A8",
+              "original": "4182002c",
+              "replacement": "60000000"
+            }
+          ]
+        }
+      }
+    },
+    "c134bdba97988bf0e7e521820ad12d9579bf10903f6706d09203c36ff3b9e4f5": {
+      "program_sha256": "c134bdba97988bf0e7e521820ad12d9579bf10903f6706d09203c36ff3b9e4f5",
+      "games": [
+        "Police 911 / Keisatsukan regional build"
+      ],
+      "chds": [
+        "a00kac02 / a00uac02"
+      ],
+      "load_address": "0x00020000",
+      "program_size": 742048,
+      "classification": "static_candidate",
+      "default_profile": "erased_u39_distribution_recovery",
+      "profiles": {
+        "legacy_full": {
+          "description": "Full exact-site recipe derived from the earlier signature/semantic analysis.",
+          "status": "static_candidate",
+          "patches": [
+            {
+              "role": "rtc_initial_checksum",
+              "address": "0x000795D0",
+              "original": "41820204",
+              "replacement": "48000204"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x00094414",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x00094658",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x00095BE8",
+              "original": "41820114",
+              "replacement": "48000114"
+            }
+          ]
+        },
+        "erased_u39_preflight": {
+          "description": "Original erased-U39 RTC error bypassed; independent DISTRIBUTION ERROR remains. NOT a complete security bypass.",
+          "status": "runtime_advanced",
+          "patches": [
+            {
+              "role": "early_rtc_state_preflight",
+              "address": "0x00094394",
+              "original": "4082002c",
+              "replacement": "4800002c"
+            },
+            {
+              "role": "rtc_initial_checksum",
+              "address": "0x000795D0",
+              "original": "41820204",
+              "replacement": "48000204"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x00094414",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x00094658",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x00095BE8",
+              "original": "41820114",
+              "replacement": "48000114"
+            }
+          ]
+        },
+        "erased_u39_distribution_recovery": {
+          "status": "runtime_advanced",
+          "description": "Erased-U39 native RTC and distribution-check recovery; MAME reaches cabinet sensor diagnostic, not gameplay",
+          "patches": [
+            {
+              "role": "early_rtc_state_preflight",
+              "address": "0x00094394",
+              "original": "4082002c",
+              "replacement": "4800002c"
+            },
+            {
+              "role": "rtc_initial_checksum",
+              "address": "0x000795D0",
+              "original": "41820204",
+              "replacement": "48000204"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x00094414",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x00094658",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x00095BE8",
+              "original": "41820114",
+              "replacement": "48000114"
+            },
+            {
+              "role": "distribution_validation_success_edge",
+              "address": "0x000947E8",
+              "original": "4182002c",
+              "replacement": "60000000"
+            }
+          ]
+        }
+      }
+    },
+    "48186dc197f880be0ea57144dfe3f5d8ec8eb59eaae6454db6eaa58f92059d57": {
+      "program_sha256": "48186dc197f880be0ea57144dfe3f5d8ec8eb59eaae6454db6eaa58f92059d57",
+      "games": [
+        "Sogeki"
+      ],
+      "chds": [
+        "a13b02"
+      ],
+      "load_address": "0x00040000",
+      "program_size": 1076968,
+      "classification": "manual_native_recovery_candidate",
+      "default_profile": "A",
+      "profiles": {
+        "A": {
+          "description": "Native backup-data recovery only; preserves the real RTC memory/write test.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "auto_recovery_test_wait",
+              "address": "0x000FF398",
+              "original": "409C012C",
+              "replacement": "60000000"
+            },
+            {
+              "role": "auto_recovery_accept_input",
+              "address": "0x000FF3AC",
+              "original": "41860028",
+              "replacement": "60000000"
+            }
+          ]
+        },
+        "B": {
+          "description": "Profile A plus the physical 0x1ff8-byte RTC SRAM-test recovery override.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "auto_recovery_test_wait",
+              "address": "0x000FF398",
+              "original": "409C012C",
+              "replacement": "60000000"
+            },
+            {
+              "role": "auto_recovery_accept_input",
+              "address": "0x000FF3AC",
+              "original": "41860028",
+              "replacement": "60000000"
+            },
+            {
+              "role": "rtc_sram_primitive_failure_return",
+              "address": "0x000B40CC",
+              "original": "38600000",
+              "replacement": "38600001"
+            }
+          ]
+        },
+        "C": {
+          "description": "Profile B plus later RTC write/identity edges; use only when runtime proves they are reached.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "auto_recovery_test_wait",
+              "address": "0x000FF398",
+              "original": "409C012C",
+              "replacement": "60000000"
+            },
+            {
+              "role": "auto_recovery_accept_input",
+              "address": "0x000FF3AC",
+              "original": "41860028",
+              "replacement": "60000000"
+            },
+            {
+              "role": "rtc_sram_primitive_failure_return",
+              "address": "0x000B40CC",
+              "original": "38600000",
+              "replacement": "38600001"
+            },
+            {
+              "role": "rtc_write_failure_edge",
+              "address": "0x000B8A2C",
+              "original": "409A001C",
+              "replacement": "60000000"
+            },
+            {
+              "role": "identity_code_failure_edge",
+              "address": "0x000B23CC",
+              "original": "409D0020",
+              "replacement": "60000000"
+            }
+          ]
+        }
+      }
+    },
+    "c414d3da63b4b1dbdfd5e8e7a2cd66d17c15861648c84182699a246df1a677bb": {
+      "program_sha256": "c414d3da63b4b1dbdfd5e8e7a2cd66d17c15861648c84182699a246df1a677bb",
+      "games": [
+        "Silent Scope EX"
+      ],
+      "chds": [
+        "a13c02"
+      ],
+      "load_address": "0x00040000",
+      "program_size": 1081184,
+      "classification": "manual_native_recovery_candidate",
+      "default_profile": "A",
+      "profiles": {
+        "A": {
+          "description": "Native backup-data recovery only; preserves the real RTC memory/write test.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "auto_recovery_test_wait",
+              "address": "0x000FF710",
+              "original": "409C012C",
+              "replacement": "60000000"
+            },
+            {
+              "role": "auto_recovery_accept_input",
+              "address": "0x000FF724",
+              "original": "41860028",
+              "replacement": "60000000"
+            }
+          ]
+        },
+        "B": {
+          "description": "Profile A plus the physical 0x1ff8-byte RTC SRAM-test recovery override.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "auto_recovery_test_wait",
+              "address": "0x000FF710",
+              "original": "409C012C",
+              "replacement": "60000000"
+            },
+            {
+              "role": "auto_recovery_accept_input",
+              "address": "0x000FF724",
+              "original": "41860028",
+              "replacement": "60000000"
+            },
+            {
+              "role": "rtc_sram_primitive_failure_return",
+              "address": "0x000B43A4",
+              "original": "38600000",
+              "replacement": "38600001"
+            }
+          ]
+        },
+        "C": {
+          "description": "Profile B plus later RTC write/identity edges; use only when runtime proves they are reached.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "auto_recovery_test_wait",
+              "address": "0x000FF710",
+              "original": "409C012C",
+              "replacement": "60000000"
+            },
+            {
+              "role": "auto_recovery_accept_input",
+              "address": "0x000FF724",
+              "original": "41860028",
+              "replacement": "60000000"
+            },
+            {
+              "role": "rtc_sram_primitive_failure_return",
+              "address": "0x000B43A4",
+              "original": "38600000",
+              "replacement": "38600001"
+            },
+            {
+              "role": "rtc_write_failure_edge",
+              "address": "0x000B8D04",
+              "original": "409A001C",
+              "replacement": "60000000"
+            },
+            {
+              "role": "identity_code_failure_edge",
+              "address": "0x000B26B4",
+              "original": "409D0020",
+              "replacement": "60000000"
+            }
+          ]
+        }
+      }
+    },
+    "a593a6f40ea036d5c29a758f0c2522d84a81fdb51d7b1f714bca5798d8216b2a": {
+      "program_sha256": "a593a6f40ea036d5c29a758f0c2522d84a81fdb51d7b1f714bca5798d8216b2a",
+      "games": [
+        "Mocap Boxing (Japan)"
+      ],
+      "chds": [
+        "a29a02"
+      ],
+      "load_address": "0x00040000",
+      "program_size": 672220,
+      "classification": "static_candidate",
+      "default_profile": "legacy_full",
+      "profiles": {
+        "legacy_full": {
+          "description": "Full exact-site recipe derived from the earlier signature/semantic analysis.",
+          "status": "static_candidate",
+          "patches": [
+            {
+              "role": "rtc_state_memory_bad",
+              "address": "0x0008F868",
+              "original": "41860030",
+              "replacement": "48000030"
+            },
+            {
+              "role": "rtc_state_selfcheck_stage1",
+              "address": "0x0008F938",
+              "original": "40860030",
+              "replacement": "48000030"
+            },
+            {
+              "role": "rtc_state_selfcheck_stage2",
+              "address": "0x0008F970",
+              "original": "4196002C",
+              "replacement": "4800002C"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x0008F9F0",
+              "original": "41820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x0008FC4C",
+              "original": "41820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x000915DC",
+              "original": "41820114",
+              "replacement": "48000114"
+            }
+          ]
+        }
+      }
+    },
+    "13e3e5229b7140f191e4f9aacf5d1d752aa18b1d2f19aa5f393985ca52274b46": {
+      "program_sha256": "13e3e5229b7140f191e4f9aacf5d1d752aa18b1d2f19aa5f393985ca52274b46",
+      "games": [
+        "Mocap Boxing"
+      ],
+      "chds": [
+        "a29b02"
+      ],
+      "load_address": "0x00040000",
+      "program_size": 672308,
+      "classification": "static_candidate",
+      "default_profile": "legacy_full",
+      "profiles": {
+        "legacy_full": {
+          "description": "Full exact-site recipe derived from the earlier signature/semantic analysis.",
+          "status": "static_candidate",
+          "patches": [
+            {
+              "role": "rtc_state_memory_bad",
+              "address": "0x0008F894",
+              "original": "41860030",
+              "replacement": "48000030"
+            },
+            {
+              "role": "rtc_state_selfcheck_stage1",
+              "address": "0x0008F964",
+              "original": "40860030",
+              "replacement": "48000030"
+            },
+            {
+              "role": "rtc_state_selfcheck_stage2",
+              "address": "0x0008F99C",
+              "original": "4196002C",
+              "replacement": "4800002C"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x0008FA1C",
+              "original": "41820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x0008FC78",
+              "original": "41820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x00091608",
+              "original": "41820114",
+              "replacement": "48000114"
+            }
+          ]
+        }
+      }
+    },
+    "a880aa27312c2bfeb03786b74f22eaaf578ac66a7812bcd723639a6e23c95a4c": {
+      "program_sha256": "a880aa27312c2bfeb03786b74f22eaaf578ac66a7812bcd723639a6e23c95a4c",
+      "games": [
+        "Tsurugi / Blade of Honor"
+      ],
+      "chds": [
+        "a30b02"
+      ],
+      "load_address": "0x01030000",
+      "program_size": 2361448,
+      "classification": "manual_native_recovery_candidate",
+      "default_profile": "C",
+      "profiles": {
+        "A": {
+          "description": "Native retained-data recovery: recovery override identity mismatch and auto-enter the game's own initializer. Safety fix: avoided invalid BC->B displacement widening; erased-U39 memory failure remains.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "outer_identity_safe_fallthrough",
+              "address": "0x010B2144",
+              "original": "4082FEE4",
+              "replacement": "60000000"
+            },
+            {
+              "role": "inner_identity",
+              "address": "0x010B4D2C",
+              "original": "4082001C",
+              "replacement": "4800001C"
+            },
+            {
+              "role": "auto_initialize_backup",
+              "address": "0x010B4EC0",
+              "original": "409C01F0",
+              "replacement": "60000000"
+            }
+          ]
+        },
+        "B": {
+          "description": "Profile A plus invalid-clock gates. Safety fix: avoided invalid BC->B displacement widening; erased-U39 memory failure remains.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "outer_identity_safe_fallthrough",
+              "address": "0x010B2144",
+              "original": "4082FEE4",
+              "replacement": "60000000"
+            },
+            {
+              "role": "inner_identity",
+              "address": "0x010B4D2C",
+              "original": "4082001C",
+              "replacement": "4800001C"
+            },
+            {
+              "role": "auto_initialize_backup",
+              "address": "0x010B4EC0",
+              "original": "409C01F0",
+              "replacement": "60000000"
+            },
+            {
+              "role": "initial_clock",
+              "address": "0x010B1FB8",
+              "original": "40820064",
+              "replacement": "48000064"
+            },
+            {
+              "role": "second_clock_safe_fallthrough",
+              "address": "0x010B2110",
+              "original": "4082FF18",
+              "replacement": "60000000"
+            }
+          ]
+        },
+        "C": {
+          "description": "Profile B plus destructive SRAM self-test recovery override. Safety fix: avoided invalid BC->B displacement widening; erased-U39 memory failure remains. MAME 0.289 all-FF U39 confirmed RTC MEMORY BAD (not gameplay).",
+          "status": "known_incomplete",
+          "patches": [
+            {
+              "role": "outer_identity_safe_fallthrough",
+              "address": "0x010B2144",
+              "original": "4082FEE4",
+              "replacement": "60000000"
+            },
+            {
+              "role": "inner_identity",
+              "address": "0x010B4D2C",
+              "original": "4082001C",
+              "replacement": "4800001C"
+            },
+            {
+              "role": "auto_initialize_backup",
+              "address": "0x010B4EC0",
+              "original": "409C01F0",
+              "replacement": "60000000"
+            },
+            {
+              "role": "initial_clock",
+              "address": "0x010B1FB8",
+              "original": "40820064",
+              "replacement": "48000064"
+            },
+            {
+              "role": "second_clock_safe_fallthrough",
+              "address": "0x010B2110",
+              "original": "4082FF18",
+              "replacement": "60000000"
+            },
+            {
+              "role": "sram_selftest",
+              "address": "0x010B2024",
+              "original": "4182FFD8",
+              "replacement": "60000000"
+            }
+          ],
+          "notes": "Controlled all-FF U39 test still displays RTC MEMORY BAD; not a verified recovery."
+        }
+      }
+    },
+    "69cb164b8b8a35c7ea200c1e32dea6773b132a303af009166106dd19120634b1": {
+      "program_sha256": "69cb164b8b8a35c7ea200c1e32dea6773b132a303af009166106dd19120634b1",
+      "games": [
+        "Thrill Drive 2 (A/J disk)"
+      ],
+      "chds": [
+        "a41a02"
+      ],
+      "load_address": "0x00038040",
+      "program_size": 679632,
+      "classification": "family_transferred",
+      "default_profile": "legacy_full",
+      "profiles": {
+        "legacy_full": {
+          "description": "Full exact-site recipe derived from the earlier signature/semantic analysis.",
+          "status": "family_transferred",
+          "patches": [
+            {
+              "role": "rtc_sram_selftest_gate",
+              "address": "0x0004CAE4",
+              "original": "40820024",
+              "replacement": "60000000"
+            },
+            {
+              "role": "rtc_selfcheck_result_gate",
+              "address": "0x0004CB4C",
+              "original": "40820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x0004CBCC",
+              "original": "41820014",
+              "replacement": "48000014"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x0004CD80",
+              "original": "41820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x0005C2C8",
+              "original": "418200EC",
+              "replacement": "480000EC"
+            },
+            {
+              "role": "rtc_runtime_validator_b",
+              "address": "0x0005D848",
+              "original": "41820020",
+              "replacement": "48000020"
+            }
+          ]
+        }
+      }
+    },
+    "bf1b79fbe28bf852062a97aca868954ad65367fefc7a77beed6ba61f719292db": {
+      "program_sha256": "bf1b79fbe28bf852062a97aca868954ad65367fefc7a77beed6ba61f719292db",
+      "games": [
+        "Thrill Drive 2"
+      ],
+      "chds": [
+        "a41b02"
+      ],
+      "load_address": "0x00038040",
+      "program_size": 679584,
+      "classification": "runtime_verified",
+      "default_profile": "legacy_full",
+      "profiles": {
+        "legacy_full": {
+          "description": "Full exact-site recipe derived from the earlier signature/semantic analysis.",
+          "status": "runtime_verified",
+          "patches": [
+            {
+              "role": "rtc_sram_selftest_gate",
+              "address": "0x0004CAE4",
+              "original": "40820024",
+              "replacement": "60000000"
+            },
+            {
+              "role": "rtc_selfcheck_result_gate",
+              "address": "0x0004CB4C",
+              "original": "40820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x0004CBCC",
+              "original": "41820014",
+              "replacement": "48000014"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x0004CD80",
+              "original": "41820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x0005C2C8",
+              "original": "418200EC",
+              "replacement": "480000EC"
+            },
+            {
+              "role": "rtc_runtime_validator_b",
+              "address": "0x0005D848",
+              "original": "41820020",
+              "replacement": "48000020"
+            }
+          ]
+        }
+      }
+    },
+    "3e4854a43bbe658da1a665363ede943005ba492919ad740dcc0338b47a8b46fa": {
+      "program_sha256": "3e4854a43bbe658da1a665363ede943005ba492919ad740dcc0338b47a8b46fa",
+      "games": [
+        "Thrill Drive 2 (C disk)"
+      ],
+      "chds": [
+        "a41c02"
+      ],
+      "load_address": "0x00038040",
+      "program_size": 680172,
+      "classification": "family_transferred",
+      "default_profile": "legacy_full",
+      "profiles": {
+        "legacy_full": {
+          "description": "Full exact-site recipe derived from the earlier signature/semantic analysis.",
+          "status": "family_transferred",
+          "patches": [
+            {
+              "role": "rtc_sram_selftest_gate",
+              "address": "0x0004CAE4",
+              "original": "40820024",
+              "replacement": "60000000"
+            },
+            {
+              "role": "rtc_selfcheck_result_gate",
+              "address": "0x0004CB4C",
+              "original": "40820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x0004CBCC",
+              "original": "41820014",
+              "replacement": "48000014"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x0004CD80",
+              "original": "41820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x0005C2C8",
+              "original": "418200EC",
+              "replacement": "480000EC"
+            },
+            {
+              "role": "rtc_runtime_validator_b",
+              "address": "0x0005D848",
+              "original": "41820020",
+              "replacement": "48000020"
+            }
+          ]
+        }
+      }
+    },
+    "5850cd854ee6b9dd31f8c0a254af69ba3d79f0961c4562d5ad312414c10160bf": {
+      "program_sha256": "5850cd854ee6b9dd31f8c0a254af69ba3d79f0961c4562d5ad312414c10160bf",
+      "games": [
+        "Boxing Mania"
+      ],
+      "chds": [
+        "a45a02"
+      ],
+      "load_address": "0x00030000",
+      "program_size": 908352,
+      "classification": "manual_native_recovery_candidate",
+      "default_profile": "C",
+      "profiles": {
+        "A": {
+          "description": "Native retained-data recovery: recovery override identity mismatch and auto-enter the game's own initializer. Safety fix: avoided invalid BC->B displacement widening; erased-U39 memory failure remains.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "outer_identity_safe_fallthrough",
+              "address": "0x000CFC6C",
+              "original": "4082FEE4",
+              "replacement": "60000000"
+            },
+            {
+              "role": "inner_identity",
+              "address": "0x000D2740",
+              "original": "4082001C",
+              "replacement": "4800001C"
+            },
+            {
+              "role": "auto_initialize_backup",
+              "address": "0x000D28D4",
+              "original": "409C01E4",
+              "replacement": "60000000"
+            }
+          ]
+        },
+        "B": {
+          "description": "Profile A plus invalid-clock gates. Safety fix: avoided invalid BC->B displacement widening; erased-U39 memory failure remains.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "outer_identity_safe_fallthrough",
+              "address": "0x000CFC6C",
+              "original": "4082FEE4",
+              "replacement": "60000000"
+            },
+            {
+              "role": "inner_identity",
+              "address": "0x000D2740",
+              "original": "4082001C",
+              "replacement": "4800001C"
+            },
+            {
+              "role": "auto_initialize_backup",
+              "address": "0x000D28D4",
+              "original": "409C01E4",
+              "replacement": "60000000"
+            },
+            {
+              "role": "initial_clock",
+              "address": "0x000CFAE0",
+              "original": "40820064",
+              "replacement": "48000064"
+            },
+            {
+              "role": "second_clock_safe_fallthrough",
+              "address": "0x000CFC38",
+              "original": "4082FF18",
+              "replacement": "60000000"
+            }
+          ]
+        },
+        "C": {
+          "description": "Profile B plus destructive SRAM self-test recovery override. Safety fix: avoided invalid BC->B displacement widening; erased-U39 memory failure remains. MAME 0.289 all-FF U39 confirmed RTC MEMORY BAD (not gameplay).",
+          "status": "known_incomplete",
+          "patches": [
+            {
+              "role": "outer_identity_safe_fallthrough",
+              "address": "0x000CFC6C",
+              "original": "4082FEE4",
+              "replacement": "60000000"
+            },
+            {
+              "role": "inner_identity",
+              "address": "0x000D2740",
+              "original": "4082001C",
+              "replacement": "4800001C"
+            },
+            {
+              "role": "auto_initialize_backup",
+              "address": "0x000D28D4",
+              "original": "409C01E4",
+              "replacement": "60000000"
+            },
+            {
+              "role": "initial_clock",
+              "address": "0x000CFAE0",
+              "original": "40820064",
+              "replacement": "48000064"
+            },
+            {
+              "role": "second_clock_safe_fallthrough",
+              "address": "0x000CFC38",
+              "original": "4082FF18",
+              "replacement": "60000000"
+            },
+            {
+              "role": "sram_selftest",
+              "address": "0x000CFB4C",
+              "original": "4182FFD8",
+              "replacement": "60000000"
+            }
+          ],
+          "notes": "Controlled all-FF U39 test still displays RTC MEMORY BAD; not a verified recovery."
+        }
+      }
+    },
+    "24809a63076d84e7792e0c404f7edbed4d7148a762ebe4947d6fcabf787222bf": {
+      "program_sha256": "24809a63076d84e7792e0c404f7edbed4d7148a762ebe4947d6fcabf787222bf",
+      "games": [
+        "Police 911 2"
+      ],
+      "chds": [
+        "b11a02"
+      ],
+      "load_address": "0x01030000",
+      "program_size": 756420,
+      "classification": "static_candidate",
+      "default_profile": "legacy_full",
+      "profiles": {
+        "legacy_full": {
+          "description": "Full exact-site recipe derived from the earlier signature/semantic analysis.",
+          "status": "static_candidate",
+          "patches": [
+            {
+              "role": "rtc_initial_checksum",
+              "address": "0x01071AD0",
+              "original": "4182FFE0",
+              "replacement": "4BFFFFE0"
+            },
+            {
+              "role": "p9112_conversion_fail",
+              "address": "0x010B2D2C",
+              "original": "41860044",
+              "replacement": "41860014"
+            },
+            {
+              "role": "p9112_identity_pair",
+              "address": "0x010B2EEC",
+              "original": "4082002C",
+              "replacement": "4800002C"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x010B2F6C",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x010B31B0",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x010B462C",
+              "original": "418200EC",
+              "replacement": "480000EC"
+            },
+            {
+              "role": "rtc_runtime_validator_b",
+              "address": "0x010B5850",
+              "original": "41820020",
+              "replacement": "48000020"
+            }
+          ]
+        }
+      }
+    },
+    "9ec56097a6a7873de01bd55793930169d8d7ae781ef6a08abe127dfa894da349": {
+      "program_sha256": "9ec56097a6a7873de01bd55793930169d8d7ae781ef6a08abe127dfa894da349",
+      "games": [
+        "Mocap Golf"
+      ],
+      "chds": [
+        "b33a02"
+      ],
+      "load_address": "0x01030000",
+      "program_size": 866472,
+      "classification": "manual_native_recovery_candidate",
+      "default_profile": "A",
+      "profiles": {
+        "A": {
+          "description": "Native backup-data recovery only; preserves the real RTC memory/write test.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "auto_recovery_test_wait",
+              "address": "0x010D63AC",
+              "original": "409C012C",
+              "replacement": "60000000"
+            },
+            {
+              "role": "auto_recovery_accept_input",
+              "address": "0x010D63C0",
+              "original": "41860028",
+              "replacement": "60000000"
+            }
+          ]
+        },
+        "B": {
+          "description": "Profile A plus the physical 0x1ff8-byte RTC SRAM-test recovery override.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "auto_recovery_test_wait",
+              "address": "0x010D63AC",
+              "original": "409C012C",
+              "replacement": "60000000"
+            },
+            {
+              "role": "auto_recovery_accept_input",
+              "address": "0x010D63C0",
+              "original": "41860028",
+              "replacement": "60000000"
+            },
+            {
+              "role": "rtc_sram_primitive_failure_return",
+              "address": "0x01064118",
+              "original": "38600000",
+              "replacement": "38600001"
+            }
+          ]
+        },
+        "C": {
+          "description": "Profile B plus later RTC write/identity edges; use only when runtime proves they are reached.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "auto_recovery_test_wait",
+              "address": "0x010D63AC",
+              "original": "409C012C",
+              "replacement": "60000000"
+            },
+            {
+              "role": "auto_recovery_accept_input",
+              "address": "0x010D63C0",
+              "original": "41860028",
+              "replacement": "60000000"
+            },
+            {
+              "role": "rtc_sram_primitive_failure_return",
+              "address": "0x01064118",
+              "original": "38600000",
+              "replacement": "38600001"
+            },
+            {
+              "role": "rtc_write_failure_edge",
+              "address": "0x01065E98",
+              "original": "409A001C",
+              "replacement": "60000000"
+            },
+            {
+              "role": "identity_code_failure_edge",
+              "address": "0x01061390",
+              "original": "409D002C",
+              "replacement": "60000000"
+            }
+          ]
+        }
+      }
+    },
+    "421070c14a7b0910c478b8208938a539b571242140cc541c5bf0ecb8fd7554f0": {
+      "program_sha256": "421070c14a7b0910c478b8208938a539b571242140cc541c5bf0ecb8fd7554f0",
+      "games": [
+        "Jurassic Park III"
+      ],
+      "chds": [
+        "b41c02"
+      ],
+      "load_address": "0x00038040",
+      "program_size": 728216,
+      "classification": "static_candidate",
+      "default_profile": "erased_u39_preflight",
+      "profiles": {
+        "legacy_full": {
+          "description": "Full exact-site recipe derived from the earlier signature/semantic analysis.",
+          "status": "static_candidate",
+          "patches": [
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x000BD74C",
+              "original": "41820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x000BD92C",
+              "original": "41820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x000BFB20",
+              "original": "41820114",
+              "replacement": "48000114"
+            }
+          ]
+        },
+        "erased_u39_preflight": {
+          "description": "RTC bypass reaches gun-check diagnostic in live MAME trace; rebuilt disk validation pending.",
+          "status": "runtime_advanced",
+          "patches": [
+            {
+              "role": "early_rtc_state_preflight",
+              "address": "0x000BD6A0",
+              "original": "40820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x000BD74C",
+              "original": "41820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x000BD92C",
+              "original": "41820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x000BFB20",
+              "original": "41820114",
+              "replacement": "48000114"
+            }
+          ]
+        }
+      }
+    },
+    "330ae5ad5fb69c2b35cf86a08e397ee91d84486448b8f8c598bdb68f56d39adb": {
+      "program_sha256": "330ae5ad5fb69c2b35cf86a08e397ee91d84486448b8f8c598bdb68f56d39adb",
+      "games": [
+        "Xtrial Racing"
+      ],
+      "chds": [
+        "b4xb02"
+      ],
+      "load_address": "0x01038040",
+      "program_size": 693196,
+      "classification": "static_candidate",
+      "default_profile": "erased_u39_preflight",
+      "profiles": {
+        "legacy_full": {
+          "description": "Full exact-site recipe derived from the earlier signature/semantic analysis.",
+          "status": "static_candidate",
+          "patches": [
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x010431A4",
+              "original": "41820014",
+              "replacement": "48000014"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x01043358",
+              "original": "41820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x0104DEAC",
+              "original": "41820100",
+              "replacement": "48000100"
+            },
+            {
+              "role": "rtc_runtime_validator_b",
+              "address": "0x0104F284",
+              "original": "41820020",
+              "replacement": "48000020"
+            }
+          ]
+        },
+        "erased_u39_preflight": {
+          "description": "Erased-U39 diagnostic advances beyond initial RTC gate; no verified gameplay.",
+          "status": "runtime_advanced",
+          "patches": [
+            {
+              "role": "early_rtc_state_preflight",
+              "address": "0x01043124",
+              "original": "40820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x010431A4",
+              "original": "41820014",
+              "replacement": "48000014"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x01043358",
+              "original": "41820024",
+              "replacement": "48000024"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x0104DEAC",
+              "original": "41820100",
+              "replacement": "48000100"
+            },
+            {
+              "role": "rtc_runtime_validator_b",
+              "address": "0x0104F284",
+              "original": "41820020",
+              "replacement": "48000020"
+            }
+          ]
+        }
+      }
+    },
+    "72ef2646b5583230b531e143a617b8006bf43a396cdca6ea1e29e1054fb3d140": {
+      "program_sha256": "72ef2646b5583230b531e143a617b8006bf43a396cdca6ea1e29e1054fb3d140",
+      "games": [
+        "Mahjong Fight Club (JAC)"
+      ],
+      "chds": [
+        "c09c04"
+      ],
+      "load_address": "0x01030000",
+      "program_size": 1529976,
+      "classification": "manual_native_recovery_candidate",
+      "default_profile": "A",
+      "profiles": {
+        "A": {
+          "description": "Native retained-data recovery: recovery override identity mismatch and auto-enter the game's own initializer.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "outer_identity",
+              "address": "0x01163C70",
+              "original": "408201E0",
+              "replacement": "480001E0"
+            },
+            {
+              "role": "inner_identity",
+              "address": "0x011662A4",
+              "original": "4082001C",
+              "replacement": "4800001C"
+            },
+            {
+              "role": "auto_initialize_backup",
+              "address": "0x01166438",
+              "original": "409C01E8",
+              "replacement": "60000000"
+            }
+          ]
+        },
+        "B": {
+          "description": "Profile A plus invalid-clock gates.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "outer_identity",
+              "address": "0x01163C70",
+              "original": "408201E0",
+              "replacement": "480001E0"
+            },
+            {
+              "role": "inner_identity",
+              "address": "0x011662A4",
+              "original": "4082001C",
+              "replacement": "4800001C"
+            },
+            {
+              "role": "auto_initialize_backup",
+              "address": "0x01166438",
+              "original": "409C01E8",
+              "replacement": "60000000"
+            },
+            {
+              "role": "initial_clock",
+              "address": "0x01163ACC",
+              "original": "40820068",
+              "replacement": "48000068"
+            },
+            {
+              "role": "second_clock",
+              "address": "0x01163C38",
+              "original": "40820218",
+              "replacement": "48000218"
+            }
+          ]
+        },
+        "C": {
+          "description": "Profile B plus destructive SRAM self-test recovery override.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "outer_identity",
+              "address": "0x01163C70",
+              "original": "408201E0",
+              "replacement": "480001E0"
+            },
+            {
+              "role": "inner_identity",
+              "address": "0x011662A4",
+              "original": "4082001C",
+              "replacement": "4800001C"
+            },
+            {
+              "role": "auto_initialize_backup",
+              "address": "0x01166438",
+              "original": "409C01E8",
+              "replacement": "60000000"
+            },
+            {
+              "role": "initial_clock",
+              "address": "0x01163ACC",
+              "original": "40820068",
+              "replacement": "48000068"
+            },
+            {
+              "role": "second_clock",
+              "address": "0x01163C38",
+              "original": "40820218",
+              "replacement": "48000218"
+            },
+            {
+              "role": "sram_selftest",
+              "address": "0x01163B3C",
+              "original": "40820314",
+              "replacement": "48000314"
+            }
+          ]
+        }
+      }
+    },
+    "564b5044b33d467a0762fa362a5588170bcd58e9af083258aba6da20c703a365": {
+      "program_sha256": "564b5044b33d467a0762fa362a5588170bcd58e9af083258aba6da20c703a365",
+      "games": [
+        "Mahjong Fight Club (JAD)"
+      ],
+      "chds": [
+        "c09d04"
+      ],
+      "load_address": "0x01030000",
+      "program_size": 1535672,
+      "classification": "manual_native_recovery_candidate",
+      "default_profile": "A",
+      "profiles": {
+        "A": {
+          "description": "Native retained-data recovery: recovery override identity mismatch and auto-enter the game's own initializer.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "outer_identity",
+              "address": "0x01164F6C",
+              "original": "408201E0",
+              "replacement": "480001E0"
+            },
+            {
+              "role": "inner_identity",
+              "address": "0x011675A0",
+              "original": "4082001C",
+              "replacement": "4800001C"
+            },
+            {
+              "role": "auto_initialize_backup",
+              "address": "0x01167734",
+              "original": "409C01E8",
+              "replacement": "60000000"
+            }
+          ]
+        },
+        "B": {
+          "description": "Profile A plus invalid-clock gates.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "outer_identity",
+              "address": "0x01164F6C",
+              "original": "408201E0",
+              "replacement": "480001E0"
+            },
+            {
+              "role": "inner_identity",
+              "address": "0x011675A0",
+              "original": "4082001C",
+              "replacement": "4800001C"
+            },
+            {
+              "role": "auto_initialize_backup",
+              "address": "0x01167734",
+              "original": "409C01E8",
+              "replacement": "60000000"
+            },
+            {
+              "role": "initial_clock",
+              "address": "0x01164DC8",
+              "original": "40820068",
+              "replacement": "48000068"
+            },
+            {
+              "role": "second_clock",
+              "address": "0x01164F34",
+              "original": "40820218",
+              "replacement": "48000218"
+            }
+          ]
+        },
+        "C": {
+          "description": "Profile B plus destructive SRAM self-test recovery override.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "outer_identity",
+              "address": "0x01164F6C",
+              "original": "408201E0",
+              "replacement": "480001E0"
+            },
+            {
+              "role": "inner_identity",
+              "address": "0x011675A0",
+              "original": "4082001C",
+              "replacement": "4800001C"
+            },
+            {
+              "role": "auto_initialize_backup",
+              "address": "0x01167734",
+              "original": "409C01E8",
+              "replacement": "60000000"
+            },
+            {
+              "role": "initial_clock",
+              "address": "0x01164DC8",
+              "original": "40820068",
+              "replacement": "48000068"
+            },
+            {
+              "role": "second_clock",
+              "address": "0x01164F34",
+              "original": "40820218",
+              "replacement": "48000218"
+            },
+            {
+              "role": "sram_selftest",
+              "address": "0x01164E38",
+              "original": "40820314",
+              "replacement": "48000314"
+            }
+          ]
+        }
+      }
+    },
+    "c98aeb8c7f6ffc10b9af21d20bb2175b3820dd84bb578cbaf89633503582359b": {
+      "program_sha256": "c98aeb8c7f6ffc10b9af21d20bb2175b3820dd84bb578cbaf89633503582359b",
+      "games": [
+        "World Combat (Japan)"
+      ],
+      "chds": [
+        "c22a02"
+      ],
+      "load_address": "0x01030000",
+      "program_size": 1039532,
+      "classification": "static_candidate",
+      "default_profile": "erased_u39_preflight",
+      "profiles": {
+        "identity_gate": {
+          "description": "Pass-8 high-confidence caller-side recovery override for the identity/identity validator that feeds RTC SELF CHECK BAD state 48. Does not claim to repair retained data by itself.",
+          "status": "static_candidate",
+          "patches": [
+            {
+              "role": "rtc_identity_identity_success_edge",
+              "address": "0x010E0FE8",
+              "original": "4082002C",
+              "replacement": "4800002C",
+              "evidence": "manual reverse pass 8"
+            }
+          ]
+        },
+        "legacy_full": {
+          "description": "Earlier aggregate/runtime recipe. Preserved for controlled diagnostics; known incomplete as a full dead-Timekeeper recovery override.",
+          "status": "known_incomplete",
+          "patches": [
+            {
+              "role": "p9112_conversion_fail",
+              "address": "0x010E0E14",
+              "original": "41860044",
+              "replacement": "41860014"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x010E1068",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x010E12EC",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x010E5368",
+              "original": "40820014",
+              "replacement": "60000000"
+            },
+            {
+              "role": "rtc_runtime_validator_b",
+              "address": "0x010E7168",
+              "original": "40820088",
+              "replacement": "60000000"
+            }
+          ]
+        },
+        "erased_u39_preflight": {
+          "description": "Erased-U39 MAME 0.289 checksum-neutral rebuild reaches rendered EVENT MODE / FREE PLAY, not fully verified gameplay.",
+          "status": "runtime_advanced",
+          "patches": [
+            {
+              "role": "early_rtc_state_preflight",
+              "address": "0x010E0FE8",
+              "original": "4082002c",
+              "replacement": "4800002c"
+            },
+            {
+              "role": "p9112_conversion_fail",
+              "address": "0x010E0E14",
+              "original": "41860044",
+              "replacement": "41860014"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x010E1068",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x010E12EC",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x010E5368",
+              "original": "40820014",
+              "replacement": "60000000"
+            },
+            {
+              "role": "rtc_runtime_validator_b",
+              "address": "0x010E7168",
+              "original": "40820088",
+              "replacement": "60000000"
+            }
+          ]
+        }
+      }
+    },
+    "3ed1dd072f41699117aad4427744e7e862f1d3807e05243fb5922a63d11d7bd1": {
+      "program_sha256": "3ed1dd072f41699117aad4427744e7e862f1d3807e05243fb5922a63d11d7bd1",
+      "games": [
+        "World Combat / Warzaid"
+      ],
+      "chds": [
+        "c22d02"
+      ],
+      "load_address": "0x01030000",
+      "program_size": 1056160,
+      "classification": "manual_native_recovery_candidate",
+      "default_profile": "erased_u39_preflight",
+      "profiles": {
+        "identity_gate": {
+          "description": "Pass-8 high-confidence identity/identity success edge only. Direct predecessor of state 48 / RTC SELF CHECK BAD / CODE 2-1004-0000.",
+          "status": "static_candidate",
+          "patches": [
+            {
+              "role": "rtc_identity_identity_success_edge",
+              "address": "0x010E4690",
+              "original": "4086002C",
+              "replacement": "4800002C",
+              "evidence": "manual reverse pass 8"
+            }
+          ]
+        },
+        "native_recovery_A": {
+          "description": "Cleaner pass-8 experiment: recovery override the identity/identity failure and automatically enter the game's native retained-data initializer; keep initial/post-init aggregate validation real.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "rtc_identity_identity_success_edge",
+              "address": "0x010E4690",
+              "original": "4086002C",
+              "replacement": "4800002C",
+              "evidence": "manual reverse pass 8"
+            },
+            {
+              "role": "auto_initialize_backup",
+              "address": "0x010E48B0",
+              "original": "409C1024",
+              "replacement": "48001024",
+              "evidence": "manual reverse pass 8 / prior controlled test set"
+            }
+          ]
+        },
+        "diagnostic_full": {
+          "description": "Six-write diagnostic set from pass 8. Intended only to isolate downstream behavior after recovery overrideing state 48; not a recommended permanent recipe.",
+          "status": "known_incomplete",
+          "patches": [
+            {
+              "role": "rtc_identity_identity_success_edge",
+              "address": "0x010E4690",
+              "original": "4086002C",
+              "replacement": "4800002C"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x010E4710",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "auto_initialize_backup",
+              "address": "0x010E48B0",
+              "original": "409C1024",
+              "replacement": "48001024"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x010E4994",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x010E89C8",
+              "original": "40820014",
+              "replacement": "60000000"
+            },
+            {
+              "role": "rtc_runtime_validator_b",
+              "address": "0x010EA7C8",
+              "original": "40820088",
+              "replacement": "60000000"
+            }
+          ]
+        },
+        "legacy_full": {
+          "description": "Earlier four aggregate/runtime gates. Preserved for historical diagnostics; proven insufficient against CODE 2-1004-0000.",
+          "status": "known_incomplete",
+          "patches": [
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x010E4710",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x010E4994",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x010E89C8",
+              "original": "40820014",
+              "replacement": "60000000"
+            },
+            {
+              "role": "rtc_runtime_validator_b",
+              "address": "0x010EA7C8",
+              "original": "40820088",
+              "replacement": "60000000"
+            }
+          ]
+        },
+        "erased_u39_preflight": {
+          "description": "Erased-U39 MAME 0.289 checksum-neutral rebuild reaches rendered EVENT MODE / FREE PLAY, not fully verified gameplay.",
+          "status": "runtime_advanced",
+          "patches": [
+            {
+              "role": "early_rtc_state_preflight",
+              "address": "0x010E4690",
+              "original": "4086002c",
+              "replacement": "4800002c"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x010E4710",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x010E4994",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x010E89C8",
+              "original": "40820014",
+              "replacement": "60000000"
+            },
+            {
+              "role": "rtc_runtime_validator_b",
+              "address": "0x010EA7C8",
+              "original": "40820088",
+              "replacement": "60000000"
+            }
+          ]
+        }
+      }
+    },
+    "dfd63adbc7ae7f264d2f0ee61880dbc79069ea4c07e660ad3d8b9c9a773de871": {
+      "program_sha256": "dfd63adbc7ae7f264d2f0ee61880dbc79069ea4c07e660ad3d8b9c9a773de871",
+      "games": [
+        "Silent Scope Fortune Hunter"
+      ],
+      "chds": [
+        "ccca02"
+      ],
+      "load_address": "0x01030000",
+      "program_size": 1149056,
+      "classification": "manual_native_recovery_candidate",
+      "default_profile": "A",
+      "profiles": {
+        "A": {
+          "description": "Native backup-data recovery only; preserves the real RTC memory/write test.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "auto_recovery_test_wait",
+              "address": "0x010FEEEC",
+              "original": "409C0118",
+              "replacement": "60000000"
+            },
+            {
+              "role": "auto_recovery_accept_input",
+              "address": "0x010FEF00",
+              "original": "41860028",
+              "replacement": "60000000"
+            }
+          ]
+        },
+        "B": {
+          "description": "Profile A plus the physical 0x1ff8-byte RTC SRAM-test recovery override.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "auto_recovery_test_wait",
+              "address": "0x010FEEEC",
+              "original": "409C0118",
+              "replacement": "60000000"
+            },
+            {
+              "role": "auto_recovery_accept_input",
+              "address": "0x010FEF00",
+              "original": "41860028",
+              "replacement": "60000000"
+            },
+            {
+              "role": "rtc_sram_primitive_failure_return",
+              "address": "0x010B1064",
+              "original": "38600000",
+              "replacement": "38600001"
+            }
+          ]
+        },
+        "C": {
+          "description": "Profile B plus later RTC write/identity edges; use only when runtime proves they are reached.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "auto_recovery_test_wait",
+              "address": "0x010FEEEC",
+              "original": "409C0118",
+              "replacement": "60000000"
+            },
+            {
+              "role": "auto_recovery_accept_input",
+              "address": "0x010FEF00",
+              "original": "41860028",
+              "replacement": "60000000"
+            },
+            {
+              "role": "rtc_sram_primitive_failure_return",
+              "address": "0x010B1064",
+              "original": "38600000",
+              "replacement": "38600001"
+            },
+            {
+              "role": "rtc_write_failure_edge",
+              "address": "0x01037674",
+              "original": "409A001C",
+              "replacement": "60000000"
+            },
+            {
+              "role": "identity_code_failure_edge",
+              "address": "0x010AE4B0",
+              "original": "419DFF68",
+              "replacement": "4BFFFF68"
+            }
+          ]
+        }
+      }
+    },
+    "ff2ee076d2c2963cc2ac6494b92c4645ef63dcc3005c00d0e98fc6f207b3a8ef": {
+      "program_sha256": "ff2ee076d2c2963cc2ac6494b92c4645ef63dcc3005c00d0e98fc6f207b3a8ef",
+      "games": [
+        "Tsurugi (Japan revision)"
+      ],
+      "chds": [
+        "a30c02"
+      ],
+      "load_address": "0x01030000",
+      "program_size": 2358516,
+      "classification": "manual_native_recovery_candidate",
+      "default_profile": "C",
+      "profiles": {
+        "A": {
+          "description": "Native retained-data recovery: recovery override identity mismatch and auto-enter the game's own initializer. Safety fix: avoided invalid BC->B displacement widening; erased-U39 memory failure remains.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "outer_identity_safe_fallthrough",
+              "address": "0x010B1F20",
+              "original": "4082FEE4",
+              "replacement": "60000000"
+            },
+            {
+              "role": "inner_identity",
+              "address": "0x010B4958",
+              "original": "4082001C",
+              "replacement": "4800001C"
+            },
+            {
+              "role": "auto_initialize_backup",
+              "address": "0x010B4AEC",
+              "original": "409C01E4",
+              "replacement": "60000000"
+            }
+          ]
+        },
+        "B": {
+          "description": "Profile A plus invalid-clock gates. Safety fix: avoided invalid BC->B displacement widening; erased-U39 memory failure remains.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "outer_identity_safe_fallthrough",
+              "address": "0x010B1F20",
+              "original": "4082FEE4",
+              "replacement": "60000000"
+            },
+            {
+              "role": "inner_identity",
+              "address": "0x010B4958",
+              "original": "4082001C",
+              "replacement": "4800001C"
+            },
+            {
+              "role": "auto_initialize_backup",
+              "address": "0x010B4AEC",
+              "original": "409C01E4",
+              "replacement": "60000000"
+            },
+            {
+              "role": "initial_clock",
+              "address": "0x010B1D94",
+              "original": "40820064",
+              "replacement": "48000064"
+            },
+            {
+              "role": "second_clock_safe_fallthrough",
+              "address": "0x010B1EEC",
+              "original": "4082FF18",
+              "replacement": "60000000"
+            }
+          ]
+        },
+        "C": {
+          "description": "Profile B plus destructive SRAM self-test recovery override. Safety fix: avoided invalid BC->B displacement widening; erased-U39 memory failure remains. MAME 0.289 all-FF U39 confirmed RTC MEMORY BAD (not gameplay).",
+          "status": "known_incomplete",
+          "patches": [
+            {
+              "role": "outer_identity_safe_fallthrough",
+              "address": "0x010B1F20",
+              "original": "4082FEE4",
+              "replacement": "60000000"
+            },
+            {
+              "role": "inner_identity",
+              "address": "0x010B4958",
+              "original": "4082001C",
+              "replacement": "4800001C"
+            },
+            {
+              "role": "auto_initialize_backup",
+              "address": "0x010B4AEC",
+              "original": "409C01E4",
+              "replacement": "60000000"
+            },
+            {
+              "role": "initial_clock",
+              "address": "0x010B1D94",
+              "original": "40820064",
+              "replacement": "48000064"
+            },
+            {
+              "role": "second_clock_safe_fallthrough",
+              "address": "0x010B1EEC",
+              "original": "4082FF18",
+              "replacement": "60000000"
+            },
+            {
+              "role": "sram_selftest",
+              "address": "0x010B1E00",
+              "original": "4182FFD8",
+              "replacement": "60000000"
+            }
+          ],
+          "notes": "Controlled all-FF U39 test still displays RTC MEMORY BAD; not a verified recovery."
+        }
+      }
+    },
+    "500143f59533295776e44348740545565ccda8ff51b91687b99ae61044997d3b": {
+      "program_sha256": "500143f59533295776e44348740545565ccda8ff51b91687b99ae61044997d3b",
+      "games": [
+        "World Combat (Korea)"
+      ],
+      "chds": [
+        "c22c02"
+      ],
+      "load_address": "0x01030000",
+      "program_size": 1054984,
+      "classification": "manual_native_recovery_candidate",
+      "default_profile": "erased_u39_preflight",
+      "profiles": {
+        "identity_gate": {
+          "description": "Pass-8 high-confidence identity/identity success edge only.",
+          "status": "static_candidate",
+          "patches": [
+            {
+              "role": "rtc_identity_identity_success_edge",
+              "address": "0x010E43EC",
+              "original": "4086002C",
+              "replacement": "4800002C",
+              "evidence": "manual reverse pass 8"
+            }
+          ]
+        },
+        "native_recovery_A": {
+          "description": "Experimental native-recovery path: recovery override state-48 identity failure and automatically take the title's operator initialization edge while leaving the real backup-data aggregate checks intact.",
+          "status": "native_recovery_candidate",
+          "patches": [
+            {
+              "role": "rtc_identity_identity_success_edge",
+              "address": "0x010E43EC",
+              "original": "4086002C",
+              "replacement": "4800002C",
+              "evidence": "manual reverse pass 8"
+            },
+            {
+              "role": "auto_initialize_backup",
+              "address": "0x010E460C",
+              "original": "409C1024",
+              "replacement": "48001024",
+              "evidence": "recovered C22C02 mapping from C22D02"
+            }
+          ]
+        },
+        "legacy_full": {
+          "description": "Earlier aggregate/runtime recipe. Preserved for controlled diagnostics; known incomplete as a full dead-Timekeeper recovery override.",
+          "status": "known_incomplete",
+          "patches": [
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x010E446C",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x010E46F0",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x010E8724",
+              "original": "40820014",
+              "replacement": "60000000"
+            },
+            {
+              "role": "rtc_runtime_validator_b",
+              "address": "0x010EA524",
+              "original": "40820088",
+              "replacement": "60000000"
+            }
+          ]
+        },
+        "erased_u39_preflight": {
+          "description": "Erased-U39 MAME 0.289 checksum-neutral rebuild reaches rendered EVENT MODE / FREE PLAY, not fully verified gameplay.",
+          "status": "runtime_advanced",
+          "patches": [
+            {
+              "role": "early_rtc_state_preflight",
+              "address": "0x010E43EC",
+              "original": "4086002c",
+              "replacement": "4800002c"
+            },
+            {
+              "role": "rtc_boot_aggregate",
+              "address": "0x010E446C",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_postinit_aggregate",
+              "address": "0x010E46F0",
+              "original": "41820028",
+              "replacement": "48000028"
+            },
+            {
+              "role": "rtc_runtime_validator_a",
+              "address": "0x010E8724",
+              "original": "40820014",
+              "replacement": "60000000"
+            },
+            {
+              "role": "rtc_runtime_validator_b",
+              "address": "0x010EA524",
+              "original": "40820088",
+              "replacement": "60000000"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
