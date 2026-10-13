@@ -114,7 +114,7 @@ It does **not** contain any CHDs, ROMs, game BINs, BIOS images, timekeeper/NVRAM
 
 This is an independent hobbyist preservation project. **Konami isn't involved or endorsing it**, and the game names belong to their respective owners. I'm publishing the code to document this repair work and help keep the real machines usable, not to distribute commercial games.
 
-There are still copyright and anti-circumvention questions around distributing game-specific modifications. The preservation goal doesn't automatically create an exception to those rules. Read the [legal/publication notes](docs/LEGAL_AND_PUBLISHING.md), and review the profile data before making your own redistributions. The MIT license only covers code its contributors have the rights to license.
+There are still copyright and anti-circumvention questions around distributing game-specific modifications. The preservation goal doesn't automatically create an exception to those rules. The MIT license only covers code its contributors have the rights to license.
 
 ## Want to help?
 
